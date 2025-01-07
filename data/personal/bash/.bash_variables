@@ -1,0 +1,5 @@
+# SSH AGENT
+export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+
+# VERSION MANAGERS
+export PYENV_ROOT="$HOME/.pyenv"

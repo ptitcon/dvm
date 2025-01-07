@@ -1,0 +1,39 @@
+[user]
+  name = Valentin Lafage
+  email = valentin.lafage@celadodc-rswl.com
+  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpscIciNzU8iGcWcDlVtKSWwhK0dnep3UYJsyd2JqwT7E8E3GKA8J+YaqWTE7GPfJeNk/oo+aVurEZuq+wC57e8qYZbjKoji8RkrixZgRx+g4LenICMOt6ji6QhE6/hYwDyLbijLuxeGI4PQMEoCpXsyI/A/1NWDi2vMRBuA/gHBUpKrxD7h+bTCJm7c6+/YK98GBYBNK5/X0XNgUYdUgwY3BvExSjrJfXOG+2JCjHE9Bu94KhaRkqYj4NoXX1FLR8sXOzygEznqQ29Xf7B9zcsoRM6vEMj69xZYg1o2IeAxBa69WoGZ1Dhp0kWJUhch6anqPKoy+UurZr+lmZzWcC/DVu7LNRAoyD894CWaDvPr8IXTgPwJw8NOnNtt0oVV/ALC25H/kGtU3cCljpEBBJpO4Z5K45RJDdzK877G5HkbTsTyn0WiZU8C8Jjzv5WO4qK2ZeK0UMUmRwpG/HJEcfSpjnfxNnZyI3R1p8Rb8BnLgckBjkGfhDHynyLz4dtws=
+[pull]
+  rebase = true
+[push]
+  default = current
+[alias]
+  co = checkout
+  cp = cherry-pick
+  br = branch
+  st = status
+  cm = commit -sS
+  amd = commit --amend --no-edit
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
+[core]
+  editor = vim
+[credential]
+  helper = store
+[color]
+  ui = auto
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[credential "https://gitlabee.dt.renault.com"]
+  username = Valentin.LAFAGE
+  password =
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
