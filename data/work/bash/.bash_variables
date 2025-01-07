@@ -1,0 +1,17 @@
+# ANDROID
+export PLATFORM="$HOME/platform/android"
+export ASDK="$HOME/Android/Sdk"
+# RENAULT
+export RENAULT="$PLATFORM/vendor/renault"
+export OVERLAY="$RENAULT/product/overlay"
+export PREBUILTS="$HOME/Lab/prebuilts/apps/renault"
+# SSH AGENT
+export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+# VERSION MANAGERS
+export NVM_DIR="$HOME/.nvm"
+export PYENV_ROOT="$HOME/.pyenv"
+export SDKMAN_DIR="$HOME/.sdkman"
+
+# PATH
+export PATH=$PATH:$ASDK"/platform-tools"
+export PATH=$PATH:$ASDK"/build-tools/34.0.0"
