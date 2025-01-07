@@ -18,7 +18,10 @@ env/
 venv/
 ENV/
 
-# Temporary 
+# Logs
+logs/
+
+# Temporary
 *.swp
 *.bak
 *.tmp
