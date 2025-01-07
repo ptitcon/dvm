@@ -1,0 +1,4 @@
+# Black will ignore files and directories listed here.
+# Additionally, Black will also ignore files and directories listed in the .gitignore file.
+
+data/
