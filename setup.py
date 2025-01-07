@@ -18,6 +18,13 @@ setup(
     ],
     packages=find_packages(where="src"),
     package_dir={"": "src"},
+    extras_require={
+        "linting": [
+            "black",
+            "flake8",
+            "pre-commit",
+        ],
+    },
     python_requires=">=3.9",
     entry_points={
         "console_scripts": [
