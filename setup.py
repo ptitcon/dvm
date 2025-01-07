@@ -4,7 +4,7 @@ from pathlib import Path
 directory = Path(__file__).resolve().parent
 with open(directory / "README.md", encoding="utf-8") as f:
     long_description = f.read()
-    
+
 setup(
     name="dotfiles",
     version="0.0.1",

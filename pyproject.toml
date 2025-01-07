@@ -1,0 +1,6 @@
+[tool.black]
+target-version = ['py39']
+line-length = 88
+skip-string-normalization = false
+skip-magic-trailing-comma = false
+include = '\.pyi?$'
