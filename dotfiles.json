@@ -1,0 +1,41 @@
+{
+  "bash": [
+    "~/.bashrc",
+    "~/.bash_aliases",
+    "~/.bash_profile",
+    "~/.bash_variables"
+  ],
+  "emacs": [
+    "~/.emacs.d/init.el"
+  ],
+  "git": [
+    "~/.gitconfig",
+    "~/.git-credentials"
+  ],
+  "i3": [
+    "~/.config/i3/config"
+  ],
+  "neovim": [
+    "~/.config/nvim/init.vim"
+  ],
+  "node": [
+    "~/.npmrc"
+  ],
+  "ssh": [
+    "~/.ssh/config",
+    "~/.ssh/known_hosts",
+    "~/.config/1Password/ssh/agent.toml"
+  ],
+  "tmux": [
+    "~/.tmux.conf"
+  ],
+  "vim": [
+    "~/.vimrc"
+  ],
+  "vscode": [
+    "~/.config/Code/User/settings.json"
+  ],
+  "zsh": [
+    "~/.zshrc"
+  ]
+}
