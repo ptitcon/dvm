@@ -1,8 +1,13 @@
 from config import set_up_root_logger
+from core.services import FileService, SymlinkService
 
 
 class Dotfiles:
     _instance = None
+
+    @property
+    def symlink_service(self) -> SymlinkService:
+        return self._symlink_service
 
     def __new__(cls):
         if cls._instance is not None:
@@ -13,6 +18,7 @@ class Dotfiles:
     def __init__(self):
         Dotfiles._instance = self
         self._logger = set_up_root_logger()
+        self._symlink_service = SymlinkService(FileService())
 
     @classmethod
     def get_instance(cls):
