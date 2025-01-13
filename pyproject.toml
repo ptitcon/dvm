@@ -1,7 +1,7 @@
 [project]
-name = "dotfiles"
+name = "dvm"
 version = "0.1.0"
-description = "Linux system configuration simplified through dotfiles management"
+description = "Simplify versioning of Linux dotfiles"
 license = {text = "MIT"}
 authors = [
     {name = "Valentin Lafage",email = "vlafage.dev@free.fr"}
@@ -15,13 +15,11 @@ classifiers = [
 ]
 
 [project.urls]
-repository = "https://github.com/ptitcon/dotfiles"
-"Bug Tracker" = "https://github.com/ptitcon/dotfiles/issues"
+repository = "https://github.com/ptitcon/dvm"
+"Bug Tracker" = "https://github.com/ptitcon/dvm/issues"
 
 [project.scripts]
 dvm = "cli.__main__:main"
-test = "tests.run_tests:main"
-test-ci = "tests.run_tests:run_in_ci"
 
 [project.optional-dependencies]
 pre-commit = [ "pre-commit>=3.5.0" ]
