@@ -1,12 +1,13 @@
 from dataclasses import dataclass, field
 from pathlib import Path
 from enum import Enum, auto
+from collections import namedtuple
 
 
 @dataclass(frozen=True)
 class Environment:
     data_dir: Path
-    variant: "Environment.Variant" = field(default="Environment.Variant.DEFAULT")
+    variant: "Environment.Variant"
 
     @property
     def variant_path(self) -> Path:
