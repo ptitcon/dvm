@@ -16,7 +16,7 @@ from .utils import (
 )
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.default(), Env.Variant.work()])
 def test_bash_names(symlink_service, generate_environment):
     env = generate_environment
 
@@ -27,7 +27,7 @@ def test_bash_names(symlink_service, generate_environment):
     )
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.personal(), Env.Variant.work()])
 def test_git_destination(symlink_service, generate_environment):
     env = generate_environment
 
@@ -38,16 +38,16 @@ def test_git_destination(symlink_service, generate_environment):
     )
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.personal(), Env.Variant.work()])
 def test_symlinks_count(symlink_service, generate_environment):
     env = generate_environment
 
     links = symlink_service.generate_symlinks(env.variant_path)
 
-    assert_links_count_equal(links, env.variant.value)
+    assert_links_count_equal(links, env.variant.dotfiles_count)
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.personal(), Env.Variant.work()])
 def test_symlink_is_broken(symlink_service, mocker):
     """Test if symlink is broken."""
     src = mocker.MagicMock(spec=Path)
@@ -60,7 +60,7 @@ def test_symlink_is_broken(symlink_service, mocker):
     assert symlink_service.is_broken_link(dst)
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.personal(), Env.Variant.work()])
 def test_symlink_is_not_broken(symlink_service, mocker):
     """Test if symlink is not broken."""
     src = mocker.MagicMock(spec=Path)
@@ -73,7 +73,7 @@ def test_symlink_is_not_broken(symlink_service, mocker):
     assert not symlink_service.is_broken_link(dst)
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.personal(), Env.Variant.work()])
 def test_symlink_state_new(symlink_service, mocker):
     """Test symlink state is NEW."""
     dst = mocker.MagicMock(spec=Path)
@@ -84,7 +84,7 @@ def test_symlink_state_new(symlink_service, mocker):
     )
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.personal(), Env.Variant.work()])
 def test_symlink_state_target_existing(symlink_service, mocker):
     """Test symlink state TARGET_EXISTING."""
     dst = mocker.MagicMock(spec=Path)
@@ -95,7 +95,7 @@ def test_symlink_state_target_existing(symlink_service, mocker):
     )
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.personal(), Env.Variant.work()])
 def test_symlink_state_target_existing_as_link(symlink_service, mocker):
     """Test symlink state is still TARGET_EXISTING when the target is a symlink."""
     dst = mocker.MagicMock(spec=Path)
@@ -107,7 +107,7 @@ def test_symlink_state_target_existing_as_link(symlink_service, mocker):
     )
 
 
-@pytest.mark.parametrize("variant", [Env.Variant.PERSONAL, Env.Variant.WORK])
+@pytest.mark.parametrize("variant", [Env.Variant.personal(), Env.Variant.work()])
 def test_symlink_state_broken(symlink_service, mocker):
     """Test symlink state is BROKEN."""
     src = mocker.MagicMock(spec=Path)
