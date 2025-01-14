@@ -23,7 +23,7 @@ jobs:
         python-version: 3.9
 
     - name: Install dependencies
-      run: ./install.sh linting
+      run: ./install.sh
 
     - name: Lint with black
       run: poetry run black --check .
