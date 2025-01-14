@@ -22,8 +22,7 @@ repository = "https://github.com/ptitcon/dvm"
 dvm = "cli.__main__:main"
 
 [project.optional-dependencies]
-pre-commit = [ "pre-commit>=3.5.0" ]
-linting = [ "black>=24.8.0", "flake8>=7.1.1" ]
+linting = [ "black>=24.8.0", "flake8>=7.1.1", "pre-commit>=3.5.0" ]
 testing = [ "pytest>=8.3.4", "pytest-mock>=3.14.0" ]
 
 [tool.poetry]
