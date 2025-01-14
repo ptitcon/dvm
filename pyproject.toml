@@ -21,14 +21,25 @@ repository = "https://github.com/ptitcon/dvm"
 [project.scripts]
 dvm = "cli.__main__:main"
 
-[project.optional-dependencies]
-linting = [ "black>=24.8.0", "flake8>=7.1.1", "pre-commit>=3.5.0" ]
-testing = [ "pytest>=8.3.4", "pytest-mock>=3.14.0" ]
-
 [tool.poetry]
 packages = [
     { include = "src" },
 ]
+
+[tool.poetry.group.lint]
+optional = true
+
+[tool.poetry.group.lint.dependencies]
+black = "^24.10.0"
+flake8 = "^7.1.1"
+pre-commit = "^4.0.1"
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-mock = "^3.14.0"
 
 [tool.black]
 target-version = ['py39']
