@@ -8,12 +8,20 @@ if ! command -v poetry &>/dev/null; then
   curl -sSL https://install.python-poetry.org | python3 - --yes
 fi
 
-EXTRA_FLAGS="linting"
-for extra in "$@"; do
-  EXTRA_FLAGS="$EXTRA_FLAGS -E $extra"
-done
+ENVIRONMENT="${1:-PROD}"
 
-poetry install -E $EXTRA_FLAGS
+ENVIRONMENT="$(echo $ENVIRONMENT | tr '[:upper:]' '[:lower:]')"
 
-# enforce the activation of pre-commit hooks
-poetry run pre-commit install
+case "$ENVIRONMENT" in
+  production|prod)
+    poetry install
+    ;;
+  development|dev)
+    poetry install --with lint,test
+    poetry run pre-commit install
+    ;;
+  *)
+    echo "Unknown environment: $ENVIRONMENT."
+    exit 1
+    ;;
+esac
