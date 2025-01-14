@@ -1,7 +1,0 @@
-# SSH AGENT
-export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
-
-# VERSION MANAGERS
-export NVM_DIR="$HOME/.nvm"
-export PYENV_ROOT="$HOME/.pyenv"
-export SDKMAN_DIR="$HOME/.sdkman"
